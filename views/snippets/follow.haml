@@ -1,0 +1,9 @@
+.span-15.last
+  - if @myself == @user
+    &nbsp;
+  - elsif @myself.follows.include? @user
+    You are following this user
+    |
+    %a{:href => "/unfollow/#{@user.chirpy_id}"} stop following this user
+  - else
+    %a{:href => "/follow/#{@user.chirpy_id}"} follow this user 

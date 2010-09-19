@@ -1,0 +1,40 @@
+textarea.update {
+	height: auto;
+}
+#button {
+	background-image:url(/images/round-btn.gif);
+	border:0 none;
+	color:#666666;
+	font-size:14px;
+	height:32px;
+	margin-left:3px;
+	width:110px;
+	
+}
+.title {
+	margin-top: 0.4em;
+	font-size: 6.5em;
+	font-family: Cambria, Georgia, Times, 'Times New Roman,' serif;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+.banner {
+	font-size: 2.8em;
+	font-family: Cambria, Georgia, Times, 'Times New Roman,' serif;
+}
+.rpx_popup_table {
+    width: auto;
+}
+
+
+.top-padding {
+	padding-top: 150px;
+}
+
+.smallpic {
+	padding: 2px;
+}
+
+a {color:#009;text-decoration:none;}
+
+.right {float: right;}

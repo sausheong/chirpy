@@ -1,0 +1,19 @@
+.chirps
+  -@chirps.each do |chirp|
+    %hr
+    .span-2
+      %img.span-2{:src => "#{chirp.user.photo_url}"}
+    .span-12
+      %a{:href => "/user/#{chirp.user.chirpy_id}"}
+        =chirp.user.name
+      &nbsp;
+      =chirp.text
+    .span-2.last
+      %a{:href =>"#", :onclick => "$('#update').attr('value','@#{chirp.user.chirpy_id} ');$('#update').focus();"} reply
+      %br        
+      %a{:href =>"#", :onclick => "$('#update').attr('value','RT @#{chirp.user.chirpy_id}: #{chirp.text} ');$('#update').focus();"} rechirp
+
+    .span-15.last
+    %em.quiet
+      =time_ago_in_words(chirp.created_at)
+    %hr.space

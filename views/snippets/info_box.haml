@@ -1,0 +1,25 @@
+.span-2
+  %a
+    %img.span-2{:src => "#{@user.photo_url}"}
+.span-3.last
+  .span-3 
+    %em #{@user.name}
+  .span-3
+    #{@user.follows.count} following
+  .span-3
+    #{@user.followers.count} followers
+  .span-3
+    #{@user.chirps.count} chirps
+%hr.space
+.span-5.last
+  %h3 Follows
+  -@user.follows.each do |follow|
+    %a{:href => "/user/#{follow.chirpy_id}"}
+      %img.smallpic{:src => "#{follow.photo_url}", :width => '24px', :alt => "#{follow.name}"}
+  
+  %hr.space
+      
+  %h3 Followers
+  -@user.followers.each do |follower|
+    %a{:href => "/user/#{follower.chirpy_id}"}
+      %img.smallpic{:src => "#{follower.photo_url}", :width => '24px', :alt => "#{follower.name}"}
