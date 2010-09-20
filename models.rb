@@ -5,7 +5,6 @@ class Session
   property :id, Serial
   property :uuid, String, :length => 255
   belongs_to :user
-
 end
 
 class User
@@ -24,6 +23,11 @@ class User
   has n, :follows_relations, 'Friendship', :child_key => [ :target_id ]
   has n, :followers, self, :through => :follower_relations, :via => :target
   has n, :follows, self, :through => :follows_relations, :via => :source
+  
+  def chirp_feed
+    feed = follows.collect {|follow| follow.chirps}.flatten + chirps
+    feed.sort { |chirp1, chirp2| chirp2.created_at <=> chirp1.created_at}
+  end
       
 end
 

@@ -42,7 +42,7 @@ end
 get '/home' do
   require_login
   @myself = @user = User.get(session[:user])
-  @chirps = @user.chirps
+  @chirps = @user.chirp_feed
   haml :home
 end
 
